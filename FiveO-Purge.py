@@ -12,11 +12,11 @@ intents.members = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 AUTHORIZED_USERS = [
-    1039776738508537907,  # Only UserIDs you place here can use the commands.
+    103975641674698407,  # Only UserIDs you place here can use the commands.
     # Add more user IDs as needed
 ]
 
-CONTROL_SERVER_ID = 1387814650959364266  # This GuildID should be the Main server where you plan to control the bot(run the commands from).    
+CONTROL_SERVER_ID = 1399714238416654655  # This GuildID should be the Main server where you plan to control the bot(run the commands from).    
 
 @bot.event
 async def on_ready():
