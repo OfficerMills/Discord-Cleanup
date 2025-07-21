@@ -45,17 +45,14 @@ async def get_target_guild(guild_id: int) -> discord.Guild:
     confirm="Type 'CONFIRM' to proceed with channel deletion"
 )
 async def remote_clean(interaction: discord.Interaction, guild_id: str, confirm: str):
-    # Authorization check
     if not is_authorized_user(interaction.user.id):
         await interaction.response.send_message("❌ You are not authorized to use this command.", ephemeral=True)
         return
-    
-    # Optional: Check if command is run from control server
+
     if CONTROL_SERVER_ID and interaction.guild_id != CONTROL_SERVER_ID:
         await interaction.response.send_message("❌ This command can only be used in the authorized control server.", ephemeral=True)
         return
-    
-    # Confirmation check
+
     if confirm != "CONFIRM":
         await interaction.response.send_message("❌ You must type 'CONFIRM' to proceed with channel deletion.", ephemeral=True)
         return
@@ -83,8 +80,7 @@ async def remote_clean(interaction: discord.Interaction, guild_id: str, confirm:
     channels_to_delete = [channel for channel in target_guild.channels if not isinstance(channel, discord.CategoryChannel)]
     
     await interaction.followup.send(f"🗑️ Starting deletion of {len(channels_to_delete)} channels in **{target_guild.name}**...")
-    
-    # Delete channels
+
     for channel in channels_to_delete:
         try:
             await channel.delete(reason=f"Remote clean command executed by {interaction.user} from server {interaction.guild.name if interaction.guild else 'DM'}")
@@ -130,7 +126,6 @@ async def remote_clean(interaction: discord.Interaction, guild_id: str, confirm:
     confirm="Type 'CONFIRM' to proceed with member purge"
 )
 async def remote_purge(interaction: discord.Interaction, guild_id: str, confirm: str):
-    # Authorization check
     if not is_authorized_user(interaction.user.id):
         await interaction.response.send_message("❌ You are not authorized to use this command.", ephemeral=True)
         return
@@ -241,8 +236,7 @@ async def remote_create(interaction: discord.Interaction, guild_id: str, amount:
         name_prefix = f"new-{channel_type}"
     
     await interaction.followup.send(f"🔨 Starting creation of {amount} {channel_type} channels in **{target_guild.name}**...")
-    
-    # Create channels
+
     for i in range(1, amount + 1):
         try:
             channel_name = f"{name_prefix}-{i}"
@@ -299,7 +293,6 @@ async def remote_create(interaction: discord.Interaction, guild_id: str, amount:
 
 @bot.tree.command(name="list-servers", description="List all servers the bot is in (for authorized users)")
 async def list_servers(interaction: discord.Interaction):
-    # Authorization check
     if not is_authorized_user(interaction.user.id):
         await interaction.response.send_message("❌ You are not authorized to use this command.", ephemeral=True)
         return
