@@ -1,5 +1,5 @@
 # LEGAL DISCLAIMER AND TERMS OF USE
-
+> **FiveO Development**
 ## IMPORTANT NOTICE - READ BEFORE USE
 
 This Discord bot software ("the Software") is provided for **legitimate administrative purposes only**. By downloading, installing, or using this Software, you agree to the following terms and conditions:
@@ -69,4 +69,6 @@ The developer reserves the right to modify these terms at any time. Continued us
 
 **BY USING THIS SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS. IF YOU DO NOT AGREE, DO NOT DOWNLOAD, INSTALL, OR USE THIS SOFTWARE.**
 
-**Last Updated:** [Current Date]
+**Last Updated:** July 21, 2025
+
+**FiveO Development**
