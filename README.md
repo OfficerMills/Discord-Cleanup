@@ -1,5 +1,5 @@
 # LEGAL DISCLAIMER AND TERMS OF USE
-> **FiveO Development**
+> **[FiveO Development](https://discord.gg/rc3FXthyzD)**
 ## IMPORTANT NOTICE - READ BEFORE USE
 
 This Discord bot software ("the Software") is provided for **legitimate administrative purposes only**. By downloading, installing, or using this Software, you agree to the following terms and conditions:
